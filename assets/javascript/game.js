@@ -4,8 +4,9 @@
 //Reset when player win/lose
 //Another random num is picked and all crystals have new numbers too
 //score board should continue to keep track
-var randomNum = "";
-var crystalNum = "";
+var randomNum = 0;
+var crystalNum = 0;
+var crystalTotal = 0;
 var loss = 0;
 var win = 0;
  
@@ -31,11 +32,16 @@ for (var i = 0; i < 4; i++) {
 
 }
 
-//on click, any clicked crystalNum should increment. The value of crystalNum should be hidden
-//But the total sum of crystalNum should be shown on each on.click
+//on click, each crystal should have a random value between 0-12
+//These values should not show up "on.click"
+$(".crystal").on('click', function () {
+	//console.log($(this).attr('ComputerGuess')); (works)
+	var crystalValue = parsInt($(this).attr('ComputerGuess'));
+	crystalTotal += crystalValue;
+	console.log(crystalTotal); 
+//But the incrementation of the values should show up upon each crystal "on.click"
 
-$(".crystals").on('click', function () {
-	console.log($(.crystal));
+
 
 });
 
