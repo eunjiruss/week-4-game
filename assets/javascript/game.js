@@ -28,8 +28,17 @@ function setGameDefaults() {
 	crystalNum = 0;
 	crystalTotal = 0;
 	seenAlready = [];
-	win = 0;
-	loss = 0;
+}
+
+function getURLForImage(index) {
+	var images = [
+		"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Chalcanthitefrance.jpg/1200px-Chalcanthitefrance.jpg",
+		"http://3.bp.blogspot.com/-_lbj_L5F_4E/VgWquXtC8qI/AAAAAAAACGE/mMRRFmtM8UI/s1600/EB0514CHALP4.jpg",
+		"http://www.johnbetts-fineminerals.com/jhbnyc/mineralmuseum/39965.jpg",
+		"http://img.irocks.com/2014-updates/SOREG14A/SOREG14A21d-art-soregaroli-fine-minerals.JPG"
+	]
+
+	return images[index];
 }
 
 function onGameReset() {
@@ -60,10 +69,11 @@ function onGameReset() {
 		}
 
 		console.log(crystalNum);
-		var crystal = $("<div>");
+		var crystal = $("<img>");
 			crystal.attr({
 				"class": 'crystal',
-				"ComputerGuess": crystalNum
+				"ComputerGuess": crystalNum,
+				"src": getURLForImage(i)
 			});
 
 			//crystal.html(crystalNum); //To show the number for test (checked)

@@ -26,17 +26,27 @@ p {
 }
 
 .crystal {
-	border: 1px solid green;
 	height:200px;
 	width: 200px;
 	margin-top: 50px;
+	box-shadow: 1px 5px 5px rgba(0,0,0,0.5);
+}
+
+.crystal:hover {
+	box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
 }
 
 body {
 	background-image: url("https://img00.deviantart.net/84e7/i/2010/361/1/8/we_require_more_minerals__by_sailorsiren-d35tzn7.png");
 	background-repeat: no-repeat;
-	background-size: cover;
-	
+	background-size: 100% 155%;
+
+
 }
+
+img {
+
+}
+
 
 
