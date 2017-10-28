@@ -1,8 +1,15 @@
+
+.container {
+	display: flex;
+		justify-content: space-around;
+	align-items: center;
+	
+}
+
 .crystals {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	position: relative;
 }
 
 .crystal {
