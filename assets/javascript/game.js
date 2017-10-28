@@ -28,6 +28,8 @@ function setGameDefaults() {
 	crystalNum = 0;
 	crystalTotal = 0;
 	seenAlready = [];
+	win = 0;
+	loss = 0;
 }
 
 function onGameReset() {
@@ -37,7 +39,7 @@ function onGameReset() {
 
 	// Clear old crystals
 	$(".crystals").html("");
-	
+
 	//show a random number at the "start"; window on load randomNum="19-120"
 	randomNum = Math.floor(Math.random() * (101 + 1)) + 19;
 	$("#randomNum").html("Crystal To Harvest: " + randomNum);
@@ -64,21 +66,24 @@ function onGameReset() {
 				"ComputerGuess": crystalNum
 			});
 
-			crystal.html(crystalNum); //To show the number for test (checked)
+			//crystal.html(crystalNum); //To show the number for test (checked)
 
 		$(".crystals").append(crystal);
 		//console.log("Crystal Test");
+		 $("#crystalTotal").html("Crystal Harvested So Far: " + crystalTotal);
 	}
 }
 
 function setEventListeners() {
 	//on click, each crystal should have a random value between 0-12 (checked)
 	//These values should not show up "on.click"
-	$(".crystal").on('click', function () {
+	$(document).on('click', ".crystal",  function () {
 		//console.log($(this).attr('ComputerGuess')); (checked)
 		//make each crystal a separate variable and then add the functions to add the values in//
 		var crystalValue = parseInt($(this).attr('ComputerGuess'));
 		crystalTotal += crystalValue;
+		$("#crystalTotal").html("Crystal Harvested So Far: " + crystalTotal);
+
 		console.log(crystalTotal); 
 	//But the incrementation of the values should show up upon each crystal "on.click" (checked)
 		
@@ -98,14 +103,15 @@ function setEventListeners() {
 			alert("You Got It!");
 			$("#wins").html("Wins: " + win);
 		//console.log("You Got It!"); (checked)
-			alert("You Got It!");
+			onGameReset();
+
 
 		}
 	});
 }
 
 
-$( document ).ready(function() {
+$(document).ready(function() {
 	onGameReset();
 	setEventListeners();
 });

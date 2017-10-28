@@ -1,11 +1,24 @@
 
 .container {
-	display: flex;
-		justify-content: space-around;
+
 	align-items: center;
-	
+	padding: 20px;
+	text-align: center;
+	background-image: url ("https://img00.deviantart.net/84e7/i/2010/361/1/8/we_require_more_minerals__by_sailorsiren-d35tzn7.png");
+
+
 }
 
+header {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 40px;
+	padding-bottom: 40px;
+}
+
+p {
+	font-family: Arial, Helvetica, sans-serif;
+	padding-bottom: 20px;
+}
 .crystals {
 	display: flex;
 	justify-content: space-around;
@@ -16,5 +29,14 @@
 	border: 1px solid green;
 	height:200px;
 	width: 200px;
+	margin-top: 50px;
 }
+
+body {
+	background-image: url("https://img00.deviantart.net/84e7/i/2010/361/1/8/we_require_more_minerals__by_sailorsiren-d35tzn7.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+}
+
 
