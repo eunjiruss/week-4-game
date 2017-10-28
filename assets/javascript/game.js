@@ -10,12 +10,12 @@ var crystalTotal = 0;
 var loss = 0;
 var win = 0;
  
+
 //show a random number at the "start"; window on load randomNum="19-120"
-
 randomNum = Math.floor(Math.random() * (101 + 1)) + 19;
-$("#randomNum").html("Number: " + randomNum);
+$("#randomNum").html("Crystal To Harvest: " + randomNum);
 
-console.log(randomNum);
+//console.log(randomNum);
 
 
 //each of the 4 crystal will have a random number each round "1-12"
@@ -37,6 +37,8 @@ for (var i = 0; i < 4; i++) {
 
 }
 
+
+
 //on click, each crystal should have a random value between 0-12 (checked)
 //These values should not show up "on.click"
 $(".crystal").on('click', function () {
@@ -55,12 +57,16 @@ $(".crystal").on('click', function () {
 
 
 	}
+
+
 	//If the total crystal added is equal to the randomNum, then add point to "wins" and alert "You Got It"
 	else if(crystalTotal === randomNum) {
 		win++;
 		alert("You Got It!");
 		$("#wins").html("Wins: " + win);
-		//console.log("You Got It!"); (checked)
+	//console.log("You Got It!"); (checked)
+		alert("You Got It!");
+
 	}
 
 
